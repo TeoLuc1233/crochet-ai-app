@@ -121,3 +121,8 @@ C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\AspNetCoreRateLimit.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\System.Memory.Data.dll

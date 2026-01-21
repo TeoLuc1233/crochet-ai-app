@@ -209,7 +209,7 @@
 
 ### 6.1 Image Upload & Storage
 
-- [ ] **TASK-029**: Setup Azure Blob Storage
+- [DONE] **TASK-029**: Setup Azure Blob Storage
   - BlobServiceClient configuration
   - Container creation
   - SAS token generation
