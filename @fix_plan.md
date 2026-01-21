@@ -261,7 +261,7 @@
 
 ### 6.3 AI Frontend
 
-- [ ] **TASK-037**: Create AI generator page
+- [DONE] **TASK-037**: Create AI generator page
   - /generate route
   - Image upload UI (drag-drop)
   - Loading state with progress
