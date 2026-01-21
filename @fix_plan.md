@@ -111,7 +111,7 @@
   - /forgot-password page (UI only for now)
   - Spec: `specs/frontend/03-auth-pages.md`
 
-- [ ] **TASK-016**: Create protected route wrapper
+- [DONE] **TASK-016**: Create protected route wrapper
   - Redirect to /login if not authenticated
   - Handle token expiration
   - Spec: `specs/frontend/04-protected-routes.md`
