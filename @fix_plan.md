@@ -140,7 +140,7 @@
 
 ### 4.2 Input Validation & Security Headers
 
-- [ ] **TASK-020**: Setup FluentValidation
+- [DONE] **TASK-020**: Setup FluentValidation
   - Install FluentValidation
   - Create validators for all DTOs
   - Register in DI container
