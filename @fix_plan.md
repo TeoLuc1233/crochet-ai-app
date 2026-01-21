@@ -190,14 +190,14 @@
   - Pagination controls
   - Spec: `specs/frontend/05-pattern-list.md`
 
-- [ ] **TASK-027**: Create pattern detail page
+- [DONE] **TASK-027**: Create pattern detail page
   - /patterns/[id] route
   - Pattern display (materials, instructions, difficulty)
   - "Save to Projects" button
   - Premium lock for free users
   - Spec: `specs/frontend/06-pattern-detail.md`
 
-- [ ] **TASK-028**: Create pattern card component
+- [DONE] **TASK-028**: Create pattern card component
   - Reusable pattern card
   - Image, title, difficulty badge
   - Premium indicator
