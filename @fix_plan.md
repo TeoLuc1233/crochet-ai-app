@@ -105,7 +105,7 @@
   - Auto-refresh mechanism
   - Spec: `specs/frontend/02-authentication.md`
 
-- [ ] **TASK-015**: Create auth pages
+- [DONE] **TASK-015**: Create auth pages
   - /login page
   - /register page
   - /forgot-password page (UI only for now)
