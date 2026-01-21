@@ -235,13 +235,13 @@
   - IPatternGeneratorService
   - Spec: `specs/ai/01-service-interfaces.md`
 
-- [ ] **TASK-033**: Implement Claude Vision service
+- [DONE] **TASK-033**: Implement Claude Vision service
   - Anthropic SDK integration
   - Image analysis method
   - Error handling & retries
   - Spec: `specs/ai/02-claude-vision.md`
 
-- [ ] **TASK-034**: Implement pattern generator service
+- [DONE] **TASK-034**: Implement pattern generator service
   - Takes analysis → generates pattern text
   - Structured output (materials, instructions, notes)
   - Caching similar results

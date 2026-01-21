@@ -126,6 +126,8 @@ builder.Services.AddScoped<IAuditLogRepository, AuditLogRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBlobStorageService, BlobStorageService>();
+builder.Services.AddScoped<IClaudeVisionService, ClaudeVisionService>();
+builder.Services.AddScoped<IPatternGeneratorService, PatternGeneratorService>();
 
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();

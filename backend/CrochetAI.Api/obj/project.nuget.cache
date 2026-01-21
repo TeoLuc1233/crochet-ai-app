@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XhVEq9P1QEk=",
+  "dgSpecHash": "4dyim+tV4pQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\matte\\OneDrive\\Desktop\\crochet-ai-ralph-package\\crochet-ai-app\\backend\\CrochetAI.Api\\CrochetAI.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matte\\.nuget\\packages\\anthropic.sdk\\1.0.0\\anthropic.sdk.1.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\aspnetcoreratelimit\\5.0.0\\aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\azure.storage.blobs\\12.19.1\\azure.storage.blobs.12.19.1.nupkg.sha512",
@@ -51,6 +52,7 @@
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.0\\microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.http\\7.0.0\\microsoft.extensions.http.7.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.identity.core\\8.0.0\\microsoft.extensions.identity.core.8.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.identity.stores\\8.0.0\\microsoft.extensions.identity.stores.8.0.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
@@ -112,5 +114,18 @@
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.20\\microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.20\\microsoft.windowsdesktop.app.ref.8.0.20.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "CrochetAI.Api dipende da Anthropic.SDK (>= 0.28.0), ma Anthropic.SDK 0.28.0 non è stato trovato. Anthropic.SDK 1.0.0 è stato risolto.",
+      "projectPath": "C:\\Users\\matte\\OneDrive\\Desktop\\crochet-ai-ralph-package\\crochet-ai-app\\backend\\CrochetAI.Api\\CrochetAI.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\matte\\OneDrive\\Desktop\\crochet-ai-ralph-package\\crochet-ai-app\\backend\\CrochetAI.Api\\CrochetAI.Api.csproj",
+      "libraryId": "Anthropic.SDK",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

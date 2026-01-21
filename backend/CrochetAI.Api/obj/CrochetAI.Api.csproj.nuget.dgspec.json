@@ -51,6 +51,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Anthropic.SDK": {
+              "target": "Package",
+              "version": "[0.28.0, )"
+            },
             "AspNetCoreRateLimit": {
               "target": "Package",
               "version": "[5.0.0, )"
