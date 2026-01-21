@@ -14,7 +14,7 @@
   - appsettings.json configuration
   - Spec: `specs/backend/01-project-structure.md`
 
-- [ ] **TASK-002**: Create frontend project structure
+- [DONE] **TASK-002**: Create frontend project structure
   - Next.js 14 with TypeScript
   - App router structure
   - TailwindCSS + shadcn/ui setup
