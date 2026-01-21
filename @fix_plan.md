@@ -247,7 +247,7 @@
   - Caching similar results
   - Spec: `specs/ai/03-pattern-generator.md`
 
-- [ ] **TASK-035**: Create pattern generation endpoint
+- [DONE] **TASK-035**: Create pattern generation endpoint
   - POST /api/ai/generate-pattern
   - Rate limiting (per user tier)
   - Usage tracking
