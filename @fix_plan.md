@@ -146,7 +146,7 @@
   - Register in DI container
   - Spec: `specs/security/05-input-validation.md`
 
-- [ ] **TASK-021**: Configure security headers
+- [DONE] **TASK-021**: Configure security headers
   - HSTS
   - CSP (Content Security Policy)
   - X-Content-Type-Options
