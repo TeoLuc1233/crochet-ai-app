@@ -268,7 +268,7 @@
   - Result display
   - Spec: `specs/frontend/08-ai-generator.md`
 
-- [ ] **TASK-038**: Create pattern editor component
+- [DONE] **TASK-038**: Create pattern editor component
   - Display generated pattern
   - Inline editing (text only)
   - Save to projects
