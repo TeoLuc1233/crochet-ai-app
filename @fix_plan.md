@@ -44,7 +44,7 @@
   - Proper relationships and indexes
   - Spec: `specs/backend/02-database-models.md`
 
-- [ ] **TASK-006**: Create initial EF migration
+- [DONE] **TASK-006**: Create initial EF migration
   - `dotnet ef migrations add InitialCreate`
   - Verify migration SQL
   - Spec: `specs/backend/03-migrations.md`
