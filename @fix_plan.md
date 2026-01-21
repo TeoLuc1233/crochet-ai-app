@@ -472,7 +472,7 @@
   - Log levels configuration
   - Spec: `specs/backend/20-logging.md`
 
-- [ ] **TASK-065**: Create health check endpoint
+- [DONE] **TASK-065**: Create health check endpoint
   - GET /health
   - Check database, Redis, blob storage
   - Return status JSON
