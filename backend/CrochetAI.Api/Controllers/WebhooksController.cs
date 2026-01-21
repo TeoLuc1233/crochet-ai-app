@@ -84,10 +84,10 @@ public class WebhooksController : ControllerBase
             UserId = userId!,
             StripeSubscriptionId = subscription.Id,
             StripeCustomerId = subscription.CustomerId,
-            PlanId = subscription.Items.Data[0].Price.Id,
+            Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id),
             Status = subscription.Status,
-            StartDate = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodStart).DateTime,
-            EndDate = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime,
+            CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodStart).DateTime,
+            CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime,
             CreatedAt = DateTime.UtcNow
         };
 
@@ -109,13 +109,13 @@ public class WebhooksController : ControllerBase
         if (dbSubscription != null)
         {
             dbSubscription.Status = subscription.Status;
-            dbSubscription.EndDate = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime;
-            dbSubscription.PlanId = subscription.Items.Data[0].Price.Id;
+            dbSubscription.CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime;
+            dbSubscription.Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id);
 
             var user = await _context.Users.FindAsync(dbSubscription.UserId);
             if (user != null)
             {
-                user.SubscriptionTier = DetermineTierFromPlanId(dbSubscription.PlanId);
+                user.SubscriptionTier = dbSubscription.Tier;
             }
 
             await _context.SaveChangesAsync();
@@ -130,7 +130,7 @@ public class WebhooksController : ControllerBase
         if (dbSubscription != null)
         {
             dbSubscription.Status = "canceled";
-            dbSubscription.EndDate = DateTime.UtcNow;
+            dbSubscription.CanceledAt = DateTime.UtcNow;
 
             var user = await _context.Users.FindAsync(dbSubscription.UserId);
             if (user != null)

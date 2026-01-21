@@ -60,11 +60,11 @@ public class SubscriptionService : ISubscriptionService
 
         try
         {
-            var service = new SubscriptionService();
-            await service.CancelAsync(subscription.StripeSubscriptionId);
+            var stripeService = new Stripe.SubscriptionService();
+            await stripeService.CancelAsync(subscription.StripeSubscriptionId);
 
             subscription.Status = "canceled";
-            subscription.EndDate = DateTime.UtcNow;
+            subscription.CanceledAt = DateTime.UtcNow;
             await _context.SaveChangesAsync();
 
             return true;
@@ -86,12 +86,12 @@ public class SubscriptionService : ISubscriptionService
 
         try
         {
-            var service = new Stripe.SubscriptionService();
-            var updateOptions = new SubscriptionUpdateOptions
+            var stripeService = new Stripe.SubscriptionService();
+            var updateOptions = new Stripe.SubscriptionUpdateOptions
             {
-                Items = new List<SubscriptionItemOptions>
+                Items = new List<Stripe.SubscriptionItemOptions>
                 {
-                    new SubscriptionItemOptions
+                    new Stripe.SubscriptionItemOptions
                     {
                         Id = subscription.StripeSubscriptionId,
                         Price = newPriceId,
@@ -99,7 +99,7 @@ public class SubscriptionService : ISubscriptionService
                 },
             };
 
-            await service.UpdateAsync(subscription.StripeSubscriptionId, updateOptions);
+            await stripeService.UpdateAsync(subscription.StripeSubscriptionId, updateOptions);
             return true;
         }
         catch (Exception ex)
