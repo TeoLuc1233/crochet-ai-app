@@ -337,7 +337,7 @@
 
 ### 8.1 Project Management Backend
 
-- [ ] **TASK-047**: Create project endpoints
+- [DONE] **TASK-047**: Create project endpoints
   - POST /api/projects (create)
   - GET /api/projects (list user's projects)
   - GET /api/projects/{id} (single)
