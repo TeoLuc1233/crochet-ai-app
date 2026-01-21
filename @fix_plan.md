@@ -452,13 +452,13 @@
 
 ### 11.1 CI/CD Pipeline
 
-- [ ] **TASK-062**: Setup GitHub Actions
+- [DONE] **TASK-062**: Setup GitHub Actions
   - Run tests on PR
   - Build Docker images
   - Deploy to staging on merge to main
   - Spec: `specs/infrastructure/03-ci-cd.md`
 
-- [ ] **TASK-063**: Create deployment scripts
+- [DONE] **TASK-063**: Create deployment scripts
   - Deploy backend to Azure App Service
   - Deploy frontend to Vercel
   - Database migration script
