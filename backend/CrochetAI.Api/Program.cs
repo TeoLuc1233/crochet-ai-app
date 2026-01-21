@@ -33,6 +33,14 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Add Redis
+var redisConnectionString = builder.Configuration["Redis:ConnectionString"] ?? "localhost:6379";
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    return ConnectionMultiplexer.Connect(redisConnectionString);
+});
+builder.Services.AddScoped<IRedisService, RedisService>();
+
 // Add ASP.NET Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
@@ -100,7 +108,9 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 // Add health checks
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<ApplicationDbContext>()
+    .AddCheck<RedisHealthCheck>("redis");
 
 var app = builder.Build();
 

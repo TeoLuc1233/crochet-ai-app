@@ -122,7 +122,7 @@
 
 ### 4.1 Rate Limiting
 
-- [ ] **TASK-017**: Setup Redis connection
+- [DONE] **TASK-017**: Setup Redis connection
   - Redis client configuration
   - Connection health check
   - Spec: `specs/security/03-redis-setup.md`
