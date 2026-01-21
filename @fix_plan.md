@@ -183,7 +183,7 @@
 
 ### 5.2 Pattern Frontend
 
-- [ ] **TASK-026**: Create pattern list page
+- [DONE] **TASK-026**: Create pattern list page
   - /patterns route
   - Grid layout (responsive)
   - Filter sidebar
