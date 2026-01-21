@@ -490,7 +490,7 @@
 
 ### 12.1 API Documentation
 
-- [ ] **TASK-067**: Setup Swagger/OpenAPI
+- [DONE] **TASK-067**: Setup Swagger/OpenAPI
   - Install Swashbuckle
   - Document all endpoints
   - Add examples

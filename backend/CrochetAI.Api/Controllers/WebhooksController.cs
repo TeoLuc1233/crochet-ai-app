@@ -86,12 +86,8 @@ public class WebhooksController : ControllerBase
             StripeCustomerId = subscription.CustomerId ?? "",
             Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id),
             Status = subscription.Status,
-            CurrentPeriodStart = subscription.CurrentPeriodStart.HasValue 
-                ? DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodStart.Value).DateTime 
-                : DateTime.UtcNow,
-            CurrentPeriodEnd = subscription.CurrentPeriodEnd.HasValue 
-                ? DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd.Value).DateTime 
-                : DateTime.UtcNow.AddMonths(1),
+            CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodStart).DateTime,
+            CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime,
             CreatedAt = DateTime.UtcNow
         };
 
@@ -113,9 +109,7 @@ public class WebhooksController : ControllerBase
         if (dbSubscription != null)
         {
             dbSubscription.Status = subscription.Status;
-            dbSubscription.CurrentPeriodEnd = subscription.CurrentPeriodEnd.HasValue 
-                ? DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd.Value).DateTime 
-                : dbSubscription.CurrentPeriodEnd;
+            dbSubscription.CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime;
             dbSubscription.Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id);
 
             var user = await _context.Users.FindAsync(dbSubscription.UserId);
