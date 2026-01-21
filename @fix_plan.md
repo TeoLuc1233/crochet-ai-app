@@ -27,7 +27,7 @@
   - Frontend container
   - Spec: `specs/infrastructure/01-docker-compose.md`
 
-- [ ] **TASK-004**: Create .env templates
+- [DONE] **TASK-004**: Create .env templates
   - backend/.env.example
   - frontend/.env.example
   - Clear documentation of all variables
