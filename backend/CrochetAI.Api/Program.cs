@@ -19,6 +19,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add rate limiting
+builder.Services.AddMemoryCache();
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+
 // Add CORS
 builder.Services.AddCors(options =>
 {
@@ -140,6 +148,9 @@ if (app.Environment.IsDevelopment())
 
 // Security headers middleware
 app.UseSecurityHeaders();
+
+// Rate limiting
+app.UseIpRateLimiting();
 
 // HTTPS redirection
 app.UseHttpsRedirection();

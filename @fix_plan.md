@@ -127,7 +127,7 @@
   - Connection health check
   - Spec: `specs/security/03-redis-setup.md`
 
-- [ ] **TASK-018**: Implement rate limiting middleware
+- [DONE] **TASK-018**: Implement rate limiting middleware
   - AspNetCoreRateLimit configuration
   - Per-endpoint limits
   - IP-based + user-based limits
