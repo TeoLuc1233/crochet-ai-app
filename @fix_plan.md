@@ -345,7 +345,7 @@
   - DELETE /api/projects/{id}
   - Spec: `specs/backend/17-project-endpoints.md`
 
-- [ ] **TASK-048**: Write project endpoint tests
+- [DONE] **TASK-048**: Write project endpoint tests
   - Test CRUD operations
   - Test permissions
   - Spec: `specs/backend/17-project-endpoints.md`
