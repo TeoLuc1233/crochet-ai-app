@@ -5,6 +5,7 @@ using CrochetAI.Api.DTOs;
 using CrochetAI.Api.Models;
 using CrochetAI.Api.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace CrochetAI.Api.Tests.Controllers;
