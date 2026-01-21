@@ -215,7 +215,7 @@
   - SAS token generation
   - Spec: `specs/backend/09-blob-storage.md`
 
-- [ ] **TASK-030**: Create image upload endpoint
+- [DONE] **TASK-030**: Create image upload endpoint
   - POST /api/images/upload
   - File validation (size, type, magic bytes)
   - Return temporary URL
