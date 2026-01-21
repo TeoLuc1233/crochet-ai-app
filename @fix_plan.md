@@ -388,7 +388,7 @@
   - Progress bars for uploads
   - Spec: `specs/frontend/17-loading-states.md`
 
-- [ ] **TASK-054**: Add animations
+- [DONE] **TASK-054**: Add animations
   - Framer Motion setup
   - Page transitions
   - Hover effects
