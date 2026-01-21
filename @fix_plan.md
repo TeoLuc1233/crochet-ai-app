@@ -133,7 +133,7 @@
   - IP-based + user-based limits
   - Spec: `specs/security/04-rate-limiting.md`
 
-- [ ] **TASK-019**: Test rate limiting
+- [DONE] **TASK-019**: Test rate limiting
   - Unit tests for rate limit service
   - Integration tests for API endpoints
   - Spec: `specs/security/04-rate-limiting.md`
