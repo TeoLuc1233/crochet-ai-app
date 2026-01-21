@@ -281,6 +281,10 @@ public class PatternsController : ControllerBase
 
     private string GetUserSubscriptionTier()
     {
+        if (User?.Identity?.IsAuthenticated != true)
+        {
+            return "Free";
+        }
         var tier = User.FindFirstValue("SubscriptionTier");
         return tier ?? "Free";
     }
