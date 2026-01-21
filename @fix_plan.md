@@ -397,13 +397,13 @@
 
 ### 9.2 Responsive Design
 
-- [ ] **TASK-055**: Mobile optimization
+- [DONE] **TASK-055**: Mobile optimization
   - Test on mobile viewports
   - Touch-friendly buttons
   - Mobile menu
   - Spec: `specs/frontend/19-mobile-responsive.md`
 
-- [ ] **TASK-056**: Tablet optimization
+- [DONE] **TASK-056**: Tablet optimization
   - Test on tablet viewports
   - Adjusted layouts
   - Spec: `specs/frontend/19-mobile-responsive.md`
