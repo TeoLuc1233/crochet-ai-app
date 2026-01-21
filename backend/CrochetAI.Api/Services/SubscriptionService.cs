@@ -109,7 +109,7 @@ public class SubscriptionService : ISubscriptionService
         }
     }
 
-    public async Task<Subscription?> GetUserSubscriptionAsync(string userId)
+    public async Task<Models.Subscription?> GetUserSubscriptionAsync(string userId)
     {
         return await _context.Subscriptions
             .FirstOrDefaultAsync(s => s.UserId == userId && s.Status == "active");

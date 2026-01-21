@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using CrochetAI.Api.Data;
 using CrochetAI.Api.DTOs;
 using CrochetAI.Api.Models;
 using CrochetAI.Api.Repositories;
@@ -17,6 +18,7 @@ public class AIController : ControllerBase
     private readonly IPatternGeneratorService _patternGeneratorService;
     private readonly IPatternRepository _patternRepository;
     private readonly IAIGenerationRepository _aiGenerationRepository;
+    private readonly ApplicationDbContext _context;
     private readonly ILogger<AIController> _logger;
 
     public AIController(
@@ -24,12 +26,14 @@ public class AIController : ControllerBase
         IPatternGeneratorService patternGeneratorService,
         IPatternRepository patternRepository,
         IAIGenerationRepository aiGenerationRepository,
+        ApplicationDbContext context,
         ILogger<AIController> logger)
     {
         _claudeVisionService = claudeVisionService;
         _patternGeneratorService = patternGeneratorService;
         _patternRepository = patternRepository;
         _aiGenerationRepository = aiGenerationRepository;
+        _context = context;
         _logger = logger;
     }
 
@@ -71,18 +75,20 @@ public class AIController : ControllerBase
             };
 
             await _patternRepository.AddAsync(pattern);
-            await _patternRepository.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             // Track AI generation
             var aiGeneration = new AIGeneration
             {
                 UserId = userId,
-                PatternId = pattern.Id,
                 ImageUrl = request.ImageUrl,
+                ImageHash = System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(request.ImageUrl)).ToString() ?? "",
+                AnalysisResult = System.Text.Json.JsonSerializer.Serialize(analysis),
+                GeneratedPattern = System.Text.Json.JsonSerializer.Serialize(patternResult),
                 CreatedAt = DateTime.UtcNow
             };
             await _aiGenerationRepository.AddAsync(aiGeneration);
-            await _aiGenerationRepository.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return Ok(new GeneratePatternResponse
             {

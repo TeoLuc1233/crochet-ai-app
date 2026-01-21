@@ -24,7 +24,7 @@ public class PatternGeneratorService : IPatternGeneratorService
     {
         // Check cache first
         var cacheKey = $"pattern:{request.ImageAnalysis.GetHashCode()}";
-        var cached = await _redisService.GetStringAsync(cacheKey);
+        var cached = await _redisService.GetAsync(cacheKey);
         if (!string.IsNullOrEmpty(cached))
         {
             _logger.LogInformation("Returning cached pattern generation result");
@@ -52,7 +52,7 @@ Continue following the pattern...",
         };
 
         // Cache the result for 24 hours
-        await _redisService.SetStringAsync(
+        await _redisService.SetAsync(
             cacheKey,
             System.Text.Json.JsonSerializer.Serialize(result),
             TimeSpan.FromHours(24));

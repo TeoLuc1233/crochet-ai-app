@@ -40,7 +40,7 @@ public class WebhooksController : ControllerBase
             switch (stripeEvent.Type)
             {
                 case "checkout.session.completed":
-                    var session = stripeEvent.Data.Object as Session;
+                    var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
                     if (session?.Mode == "subscription" && session.ClientReferenceId != null)
                     {
                         await HandleSubscriptionCreated(session);
