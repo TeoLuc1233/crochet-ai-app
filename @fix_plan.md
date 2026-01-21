@@ -376,7 +376,7 @@
   - shadcn/ui theme configuration
   - Spec: `specs/frontend/15-design-system.md`
 
-- [ ] **TASK-052**: Create layout components
+- [DONE] **TASK-052**: Create layout components
   - Header with navigation
   - Footer
   - Sidebar (for filters)
