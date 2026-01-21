@@ -1,0 +1,96 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: crochetai-postgres
+    environment:
+      POSTGRES_DB: crochetai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - crochetai-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: crochetai-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - crochetai-network
+
+  backend:
+    build:
+      context: ./backend/CrochetAI.Api
+      dockerfile: Dockerfile
+    container_name: crochetai-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=crochetai;Username=postgres;Password=postgres
+      - Redis__ConnectionString=redis:6379
+      - AllowedOrigins=http://localhost:3000
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/CrochetAI.Api:/app
+      - /app/bin
+      - /app/obj
+    networks:
+      - crochetai-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: crochetai-frontend
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - crochetai-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  crochetai-network:
+    driver: bridge

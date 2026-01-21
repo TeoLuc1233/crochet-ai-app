@@ -20,7 +20,7 @@
   - TailwindCSS + shadcn/ui setup
   - Spec: `specs/frontend/01-project-structure.md`
 
-- [ ] **TASK-003**: Setup Docker Compose
+- [DONE] **TASK-003**: Setup Docker Compose
   - PostgreSQL container
   - Redis container
   - Backend container
