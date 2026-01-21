@@ -29,7 +29,10 @@ public class PatternsController : ControllerBase
         [FromQuery] int pageSize = 20,
         [FromQuery] string? difficulty = null,
         [FromQuery] string? category = null,
-        [FromQuery] bool? isPremium = null)
+        [FromQuery] string? material = null,
+        [FromQuery] bool? isPremium = null,
+        [FromQuery] string? sortBy = "createdAt",
+        [FromQuery] string? sortOrder = "desc")
     {
         if (page < 1) page = 1;
         if (pageSize < 1 || pageSize > 100) pageSize = 20;
@@ -48,6 +51,10 @@ public class PatternsController : ControllerBase
         {
             patterns = patterns.Where(p => p.Category == category);
         }
+        if (material != null)
+        {
+            patterns = patterns.Where(p => p.Materials.Contains(material, StringComparison.OrdinalIgnoreCase));
+        }
         if (isPremium.HasValue)
         {
             patterns = patterns.Where(p => p.IsPremium == isPremium.Value);
@@ -58,6 +65,23 @@ public class PatternsController : ControllerBase
         {
             patterns = patterns.Where(p => !p.IsPremium);
         }
+
+        // Apply sorting
+        patterns = sortBy.ToLower() switch
+        {
+            "popularity" => sortOrder.ToLower() == "asc" 
+                ? patterns.OrderBy(p => p.ViewCount)
+                : patterns.OrderByDescending(p => p.ViewCount),
+            "difficulty" => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.Difficulty)
+                : patterns.OrderByDescending(p => p.Difficulty),
+            "title" => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.Title)
+                : patterns.OrderByDescending(p => p.Title),
+            _ => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.CreatedAt)
+                : patterns.OrderByDescending(p => p.CreatedAt)
+        };
 
         var totalCount = patterns.Count();
         var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
@@ -169,7 +193,10 @@ public class PatternsController : ControllerBase
         [FromQuery] int page = 1,
         [FromQuery] int pageSize = 20,
         [FromQuery] string? difficulty = null,
-        [FromQuery] string? category = null)
+        [FromQuery] string? category = null,
+        [FromQuery] string? material = null,
+        [FromQuery] string? sortBy = "createdAt",
+        [FromQuery] string? sortOrder = "desc")
     {
         if (page < 1) page = 1;
         if (pageSize < 1 || pageSize > 100) pageSize = 20;
@@ -196,12 +223,33 @@ public class PatternsController : ControllerBase
         {
             patterns = patterns.Where(p => p.Category == category);
         }
+        if (material != null)
+        {
+            patterns = patterns.Where(p => p.Materials.Contains(material, StringComparison.OrdinalIgnoreCase));
+        }
 
         // Filter out premium patterns for free users
         if (!canAccessPremium)
         {
             patterns = patterns.Where(p => !p.IsPremium);
         }
+
+        // Apply sorting
+        patterns = sortBy.ToLower() switch
+        {
+            "popularity" => sortOrder.ToLower() == "asc" 
+                ? patterns.OrderBy(p => p.ViewCount)
+                : patterns.OrderByDescending(p => p.ViewCount),
+            "difficulty" => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.Difficulty)
+                : patterns.OrderByDescending(p => p.Difficulty),
+            "title" => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.Title)
+                : patterns.OrderByDescending(p => p.Title),
+            _ => sortOrder.ToLower() == "asc"
+                ? patterns.OrderBy(p => p.CreatedAt)
+                : patterns.OrderByDescending(p => p.CreatedAt)
+        };
 
         var totalCount = patterns.Count();
         var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);

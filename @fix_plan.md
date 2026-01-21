@@ -170,7 +170,7 @@
   - GET /api/patterns/search (search with filters)
   - Spec: `specs/backend/07-pattern-endpoints.md`
 
-- [ ] **TASK-024**: Implement pattern filtering
+- [DONE] **TASK-024**: Implement pattern filtering
   - Filter by difficulty, category, materials
   - Sort by popularity, date, difficulty
   - Spec: `specs/backend/08-pattern-filtering.md`
