@@ -1,4 +1,5 @@
 using System.Text;
+using AspNetCoreRateLimit;
 using CrochetAI.Api.Data;
 using CrochetAI.Api.Extensions;
 using CrochetAI.Api.HealthChecks;
