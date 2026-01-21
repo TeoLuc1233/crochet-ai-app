@@ -93,7 +93,7 @@ public class PatternsController : ControllerBase
             {
                 Id = p.Id,
                 Title = p.Title,
-                Description = p.Description,
+                Description = p.Description ?? string.Empty,
                 Difficulty = p.Difficulty,
                 Category = p.Category,
                 ImageUrl = p.ImageUrl,
@@ -211,7 +211,7 @@ public class PatternsController : ControllerBase
         {
             patterns = patterns.Where(p =>
                 p.Title.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-                p.Description.Contains(query, StringComparison.OrdinalIgnoreCase));
+                (p.Description != null && p.Description.Contains(query, StringComparison.OrdinalIgnoreCase)));
         }
 
         // Apply filters
@@ -261,7 +261,7 @@ public class PatternsController : ControllerBase
             {
                 Id = p.Id,
                 Title = p.Title,
-                Description = p.Description,
+                Description = p.Description ?? string.Empty,
                 Difficulty = p.Difficulty,
                 Category = p.Category,
                 ImageUrl = p.ImageUrl,
