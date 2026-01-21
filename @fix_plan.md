@@ -371,7 +371,7 @@
 
 ### 9.1 Core Components
 
-- [ ] **TASK-051**: Create design system
+- [DONE] **TASK-051**: Create design system
   - Colors, typography, spacing tokens
   - shadcn/ui theme configuration
   - Spec: `specs/frontend/15-design-system.md`
