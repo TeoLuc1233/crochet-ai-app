@@ -420,12 +420,12 @@
   - Test all repositories
   - Spec: `specs/backend/18-unit-tests.md`
 
-- [ ] **TASK-058**: Write integration tests
+- [DONE] **TASK-058**: Write integration tests
   - Test end-to-end flows
   - Test with real database (test container)
   - Spec: `specs/backend/19-integration-tests.md`
 
-- [ ] **TASK-059**: Security audit tests
+- [DONE] **TASK-059**: Security audit tests
   - SQL injection tests
   - XSS tests
   - CSRF tests
