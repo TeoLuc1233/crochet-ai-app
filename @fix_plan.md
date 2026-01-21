@@ -164,7 +164,7 @@
 
 ### 5.1 Pattern Backend
 
-- [ ] **TASK-023**: Create pattern endpoints
+- [DONE] **TASK-023**: Create pattern endpoints
   - GET /api/patterns (list with pagination)
   - GET /api/patterns/{id} (single pattern)
   - GET /api/patterns/search (search with filters)
