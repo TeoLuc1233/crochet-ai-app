@@ -130,14 +130,23 @@ public class ProjectsController : ControllerBase
         await _projectRepository.AddAsync(project);
         await _context.SaveChangesAsync();
 
+        var progressData = !string.IsNullOrEmpty(project.Progress) 
+            ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(project.Progress) 
+            : null;
+        var progressPercent = progressData != null && progressData.ContainsKey("currentRow") && progressData.ContainsKey("totalRows")
+            ? (int)((double)progressData["currentRow"]! / (double)progressData["totalRows"]! * 100)
+            : 0;
+        var notes = progressData?.ContainsKey("notes") == true ? progressData["notes"]?.ToString() : null;
+
         var dto = new ProjectDto
         {
             Id = project.Id,
-            Name = project.Name,
-            Description = project.Description,
+            Name = project.Title,
+            Description = null,
             Status = project.Status,
             PatternId = project.PatternId,
-            Progress = project.Progress,
+            Progress = progressPercent,
+            Notes = notes,
             CreatedAt = project.CreatedAt,
             UpdatedAt = project.UpdatedAt
         };
@@ -180,13 +189,13 @@ public class ProjectsController : ControllerBase
         await _projectRepository.UpdateAsync(project);
         await _context.SaveChangesAsync();
 
-        var progressData = !string.IsNullOrEmpty(project.Progress) 
+        var updatedProgressData = !string.IsNullOrEmpty(project.Progress) 
             ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(project.Progress) 
             : null;
-        var progressPercent = progressData != null && progressData.ContainsKey("currentRow") && progressData.ContainsKey("totalRows")
-            ? (int)((double)progressData["currentRow"]! / (double)progressData["totalRows"]! * 100)
+        var progressPercent = updatedProgressData != null && updatedProgressData.ContainsKey("currentRow") && updatedProgressData.ContainsKey("totalRows")
+            ? (int)((double)updatedProgressData["currentRow"]! / (double)updatedProgressData["totalRows"]! * 100)
             : 0;
-        var notes = progressData?.ContainsKey("notes") == true ? progressData["notes"]?.ToString() : null;
+        var notes = updatedProgressData?.ContainsKey("notes") == true ? updatedProgressData["notes"]?.ToString() : null;
 
         var dto = new ProjectDto
         {
