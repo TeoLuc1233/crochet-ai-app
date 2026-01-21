@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrochetAI.Api.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd1bcec66ef5d205b67d63e9abf0152ec2b77dc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+896f30be4716f162035ea30accd560b8e2f6fa94")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrochetAI.Api.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrochetAI.Api.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

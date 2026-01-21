@@ -55,7 +55,7 @@
   - Seed script in Program.cs
   - Spec: `specs/backend/04-database-seeding.md`
 
-- [ ] **TASK-008**: Write repository interfaces
+- [DONE] **TASK-008**: Write repository interfaces
   - IUserRepository, IPatternRepository, etc.
   - Generic repository pattern
   - Spec: `specs/backend/05-repositories.md`
