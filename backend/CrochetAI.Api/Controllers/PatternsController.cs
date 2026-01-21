@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using System.Text.Json;
 using CrochetAI.Api.DTOs;
 using CrochetAI.Api.Models;
 using CrochetAI.Api.Repositories;
@@ -104,14 +105,54 @@ public class PatternsController : ControllerBase
             return Forbid("Premium subscription required to access this pattern");
         }
 
+        // Parse Materials JSON string to List<string>
+        var materials = new List<string>();
+        if (!string.IsNullOrEmpty(pattern.Materials))
+        {
+            try
+            {
+                var materialsJson = JsonSerializer.Deserialize<Dictionary<string, object>>(pattern.Materials);
+                if (materialsJson != null)
+                {
+                    // Extract materials from JSON structure
+                    foreach (var item in materialsJson)
+                    {
+                        if (item.Value is JsonElement element)
+                        {
+                            if (element.ValueKind == JsonValueKind.Array)
+                            {
+                                foreach (var arrayItem in element.EnumerateArray())
+                                {
+                                    materials.Add(arrayItem.GetString() ?? string.Empty);
+                                }
+                            }
+                            else
+                            {
+                                materials.Add(element.GetString() ?? string.Empty);
+                            }
+                        }
+                        else
+                        {
+                            materials.Add(item.Value?.ToString() ?? string.Empty);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // If JSON parsing fails, treat as single string
+                materials.Add(pattern.Materials);
+            }
+        }
+
         var dto = new PatternDto
         {
             Id = pattern.Id,
             Title = pattern.Title,
-            Description = pattern.Description,
+            Description = pattern.Description ?? string.Empty,
             Difficulty = pattern.Difficulty,
             Category = pattern.Category,
-            Materials = pattern.Materials ?? new List<string>(),
+            Materials = materials,
             Instructions = pattern.Instructions,
             ImageUrl = pattern.ImageUrl,
             IsPremium = pattern.IsPremium,
