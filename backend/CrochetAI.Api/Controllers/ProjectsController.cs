@@ -40,18 +40,28 @@ public class ProjectsController : ControllerBase
         }
 
         var projects = await _projectRepository.FindAsync(p => p.UserId == userId);
-        var dtos = projects.Select(p => new ProjectDto
-        {
-            Id = p.Id,
-            Name = p.Name,
-            Description = p.Description,
-            Status = p.Status,
-            PatternId = p.PatternId,
-            PatternTitle = p.Pattern?.Title,
-            Progress = p.Progress,
-            Notes = p.Notes,
-            CreatedAt = p.CreatedAt,
-            UpdatedAt = p.UpdatedAt
+        var dtos = projects.Select(p => {
+            var progressData = !string.IsNullOrEmpty(p.Progress) 
+                ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(p.Progress) 
+                : null;
+            var progressPercent = progressData != null && progressData.ContainsKey("currentRow") && progressData.ContainsKey("totalRows")
+                ? (int)((double)progressData["currentRow"]! / (double)progressData["totalRows"]! * 100)
+                : 0;
+            var notes = progressData?.ContainsKey("notes") == true ? progressData["notes"]?.ToString() : null;
+            
+            return new ProjectDto
+            {
+                Id = p.Id,
+                Name = p.Title,
+                Description = null,
+                Status = p.Status,
+                PatternId = p.PatternId,
+                PatternTitle = p.Pattern?.Title,
+                Progress = progressPercent,
+                Notes = notes,
+                CreatedAt = p.CreatedAt,
+                UpdatedAt = p.UpdatedAt
+            };
         });
 
         return Ok(dtos);
@@ -72,16 +82,24 @@ public class ProjectsController : ControllerBase
             return NotFound();
         }
 
+        var progressData = !string.IsNullOrEmpty(project.Progress) 
+            ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(project.Progress) 
+            : null;
+        var progressPercent = progressData != null && progressData.ContainsKey("currentRow") && progressData.ContainsKey("totalRows")
+            ? (int)((double)progressData["currentRow"]! / (double)progressData["totalRows"]! * 100)
+            : 0;
+        var notes = progressData?.ContainsKey("notes") == true ? progressData["notes"]?.ToString() : null;
+
         var dto = new ProjectDto
         {
             Id = project.Id,
-            Name = project.Name,
-            Description = project.Description,
+            Name = project.Title,
+            Description = null,
             Status = project.Status,
             PatternId = project.PatternId,
             PatternTitle = project.Pattern?.Title,
-            Progress = project.Progress,
-            Notes = project.Notes,
+            Progress = progressPercent,
+            Notes = notes,
             CreatedAt = project.CreatedAt,
             UpdatedAt = project.UpdatedAt
         };
@@ -100,12 +118,11 @@ public class ProjectsController : ControllerBase
 
         var project = new Project
         {
-            Name = request.Name,
-            Description = request.Description,
+            Title = request.Name,
             UserId = userId,
             PatternId = request.PatternId,
-            Status = "Not Started",
-            Progress = 0,
+            Status = "NotStarted",
+            Progress = System.Text.Json.JsonSerializer.Serialize(new { currentRow = 0, totalRows = 0, notes = request.Description ?? "" }),
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
@@ -143,26 +160,44 @@ public class ProjectsController : ControllerBase
             return NotFound();
         }
 
-        if (request.Name != null) project.Name = request.Name;
-        if (request.Description != null) project.Description = request.Description;
+        var progressData = !string.IsNullOrEmpty(project.Progress) 
+            ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(project.Progress) 
+            : new Dictionary<string, object>();
+        
+        if (request.Name != null) project.Title = request.Name;
         if (request.Status != null) project.Status = request.Status;
-        if (request.Progress.HasValue) project.Progress = request.Progress.Value;
-        if (request.Notes != null) project.Notes = request.Notes;
+        if (request.Progress.HasValue || request.Notes != null)
+        {
+            if (request.Progress.HasValue && progressData.ContainsKey("totalRows"))
+            {
+                progressData["currentRow"] = request.Progress.Value;
+            }
+            if (request.Notes != null) progressData["notes"] = request.Notes;
+            project.Progress = System.Text.Json.JsonSerializer.Serialize(progressData);
+        }
         project.UpdatedAt = DateTime.UtcNow;
 
         await _projectRepository.UpdateAsync(project);
         await _context.SaveChangesAsync();
 
+        var progressData = !string.IsNullOrEmpty(project.Progress) 
+            ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(project.Progress) 
+            : null;
+        var progressPercent = progressData != null && progressData.ContainsKey("currentRow") && progressData.ContainsKey("totalRows")
+            ? (int)((double)progressData["currentRow"]! / (double)progressData["totalRows"]! * 100)
+            : 0;
+        var notes = progressData?.ContainsKey("notes") == true ? progressData["notes"]?.ToString() : null;
+
         var dto = new ProjectDto
         {
             Id = project.Id,
-            Name = project.Name,
-            Description = project.Description,
+            Name = project.Title,
+            Description = null,
             Status = project.Status,
             PatternId = project.PatternId,
             PatternTitle = project.Pattern?.Title,
-            Progress = project.Progress,
-            Notes = project.Notes,
+            Progress = progressPercent,
+            Notes = notes,
             CreatedAt = project.CreatedAt,
             UpdatedAt = project.UpdatedAt
         };

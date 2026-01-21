@@ -79,15 +79,15 @@ public class WebhooksController : ControllerBase
         var subscriptionService = new Stripe.SubscriptionService();
         var subscription = await subscriptionService.GetAsync(session.SubscriptionId);
 
-        var dbSubscription = new Subscription
+        var dbSubscription = new Models.Subscription
         {
             UserId = userId!,
             StripeSubscriptionId = subscription.Id,
             StripeCustomerId = subscription.CustomerId,
             Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id),
             Status = subscription.Status,
-            CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodStart).DateTime,
-            CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime,
+            CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds((long)subscription.CurrentPeriodStart).DateTime,
+            CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds((long)subscription.CurrentPeriodEnd).DateTime,
             CreatedAt = DateTime.UtcNow
         };
 
@@ -109,7 +109,7 @@ public class WebhooksController : ControllerBase
         if (dbSubscription != null)
         {
             dbSubscription.Status = subscription.Status;
-            dbSubscription.CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime;
+            dbSubscription.CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds((long)subscription.CurrentPeriodEnd).DateTime;
             dbSubscription.Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id);
 
             var user = await _context.Users.FindAsync(dbSubscription.UserId);
