@@ -281,24 +281,24 @@
 
 ### 7.1 Stripe Integration
 
-- [ ] **TASK-039**: Setup Stripe
+- [DONE] **TASK-039**: Setup Stripe
   - Install Stripe.NET
   - Configure API keys
   - Create webhook endpoint
   - Spec: `specs/backend/12-stripe-setup.md`
 
-- [ ] **TASK-040**: Create subscription service
+- [DONE] **TASK-040**: Create subscription service
   - Create/cancel subscription
   - Handle plan upgrades/downgrades
   - Sync with database
   - Spec: `specs/backend/13-subscription-service.md`
 
-- [ ] **TASK-041**: Create checkout endpoint
+- [DONE] **TASK-041**: Create checkout endpoint
   - POST /api/subscriptions/create-checkout
   - Handle Stripe Checkout Session
   - Spec: `specs/backend/14-checkout-endpoint.md`
 
-- [ ] **TASK-042**: Create webhook handler
+- [DONE] **TASK-042**: Create webhook handler
   - POST /api/webhooks/stripe
   - Handle subscription events
   - Update user tier in database
