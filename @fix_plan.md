@@ -324,7 +324,7 @@
   - Update UI on successful payment
   - Spec: `specs/frontend/11-checkout-flow.md`
 
-- [ ] **TASK-046**: Create account settings page
+- [DONE] **TASK-046**: Create account settings page
   - /settings route
   - Display current plan
   - Manage subscription (upgrade/cancel)
