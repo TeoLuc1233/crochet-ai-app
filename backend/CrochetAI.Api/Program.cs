@@ -1,6 +1,7 @@
 using System.Text;
 using CrochetAI.Api.Data;
 using CrochetAI.Api.Extensions;
+using CrochetAI.Api.HealthChecks;
 using CrochetAI.Api.Models;
 using CrochetAI.Api.Repositories;
 using CrochetAI.Api.Services;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -109,7 +111,6 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 // Add health checks
 builder.Services.AddHealthChecks()
-    .AddDbContextCheck<ApplicationDbContext>()
     .AddCheck<RedisHealthCheck>("redis");
 
 var app = builder.Build();

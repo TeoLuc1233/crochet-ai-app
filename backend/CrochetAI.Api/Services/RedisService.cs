@@ -14,9 +14,9 @@ public class RedisService : IRedisService, IDisposable
         _database = redis.GetDatabase();
     }
 
-    public async Task<bool> IsConnectedAsync()
+    public Task<bool> IsConnectedAsync()
     {
-        return _redis.IsConnected;
+        return Task.FromResult(_redis.IsConnected);
     }
 
     public async Task<string?> GetAsync(string key)

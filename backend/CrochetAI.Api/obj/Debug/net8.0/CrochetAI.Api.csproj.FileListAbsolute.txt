@@ -117,3 +117,5 @@ C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api\bin\Debug\net8.0\StackExchange.Redis.dll
