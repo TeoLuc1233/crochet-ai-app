@@ -352,13 +352,13 @@
 
 ### 8.2 Project Management Frontend
 
-- [ ] **TASK-049**: Create projects page
+- [DONE] **TASK-049**: Create projects page
   - /projects route
   - List of user's projects
   - Progress indicators
   - Spec: `specs/frontend/13-projects-page.md`
 
-- [ ] **TASK-050**: Create project detail page
+- [DONE] **TASK-050**: Create project detail page
   - /projects/[id] route
   - Pattern reference
   - Progress tracker (checkboxes for rows/rounds)
