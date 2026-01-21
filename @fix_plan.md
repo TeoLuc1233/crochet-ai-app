@@ -318,7 +318,7 @@
   - CTA buttons
   - Spec: `specs/frontend/10-pricing-page.md`
 
-- [ ] **TASK-045**: Create checkout flow
+- [DONE] **TASK-045**: Create checkout flow
   - Redirect to Stripe Checkout
   - Success/cancel pages
   - Update UI on successful payment
