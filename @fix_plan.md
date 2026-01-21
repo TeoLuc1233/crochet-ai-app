@@ -304,7 +304,7 @@
   - Update user tier in database
   - Spec: `specs/backend/15-stripe-webhooks.md`
 
-- [ ] **TASK-043**: Write payment tests
+- [DONE] **TASK-043**: Write payment tests
   - Mock Stripe API
   - Test subscription creation
   - Test webhook handling
