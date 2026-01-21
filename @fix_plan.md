@@ -221,7 +221,7 @@
   - Return temporary URL
   - Spec: `specs/backend/10-image-upload.md`
 
-- [ ] **TASK-031**: Write image upload tests
+- [DONE] **TASK-031**: Write image upload tests
   - Test valid images
   - Test invalid file types
   - Test file size limits
