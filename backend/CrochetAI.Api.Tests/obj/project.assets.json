@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Anthropic.SDK/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Http": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Anthropic.SDK.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Anthropic.SDK.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AspNetCoreRateLimit/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1038,6 +1054,28 @@
         },
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Http/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
         },
@@ -3522,6 +3560,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Anthropic.SDK": "0.28.0",
           "AspNetCoreRateLimit": "5.0.0",
           "Azure.Storage.Blobs": "12.19.1",
           "FluentValidation.AspNetCore": "11.3.0",
@@ -3546,6 +3585,22 @@
     }
   },
   "libraries": {
+    "Anthropic.SDK/1.0.0": {
+      "sha512": "SWlpUj/1f+g89k6173ginynj7Ok0LmJ6AkmvjzKpD9qt0xhftbkuTQ8a0Cn74ytavBWnlLjyXsfW4dybLbq6LA==",
+      "type": "package",
+      "path": "anthropic.sdk/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "anthropic.sdk.1.0.0.nupkg.sha512",
+        "anthropic.sdk.nuspec",
+        "lib/net6.0/Anthropic.SDK.dll",
+        "lib/net6.0/Anthropic.SDK.xml",
+        "lib/netstandard2.0/Anthropic.SDK.dll",
+        "lib/netstandard2.0/Anthropic.SDK.xml"
+      ]
+    },
     "AspNetCoreRateLimit/5.0.0": {
       "sha512": "6fq9+o1maGADUmpK/PvcF0DtXW2+7bSkIL7MDIo/agbIHKN8XkMQF4oze60DO731WaQmHmK260hB30FwPzCmEg==",
       "type": "package",
@@ -5052,6 +5107,33 @@
         "lib/netstandard2.1/Microsoft.Extensions.Hosting.Abstractions.xml",
         "microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.hosting.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Http/7.0.0": {
+      "sha512": "9Pq9f/CvOSz0t9yQa6g1uWpxa2sm13daLFm8EZwy9MaQUjKXWdNUXQwIxwhmba5N83UIqURiPHSNqGK1vfWF2w==",
+      "type": "package",
+      "path": "microsoft.extensions.http/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Http.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Http.targets",
+        "lib/net462/Microsoft.Extensions.Http.dll",
+        "lib/net462/Microsoft.Extensions.Http.xml",
+        "lib/net6.0/Microsoft.Extensions.Http.dll",
+        "lib/net6.0/Microsoft.Extensions.Http.xml",
+        "lib/net7.0/Microsoft.Extensions.Http.dll",
+        "lib/net7.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.7.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -10201,5 +10283,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "CrochetAI.Api dipende da Anthropic.SDK (>= 0.28.0), ma Anthropic.SDK 0.28.0 non è stato trovato. Anthropic.SDK 1.0.0 è stato risolto.",
+      "libraryId": "Anthropic.SDK",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

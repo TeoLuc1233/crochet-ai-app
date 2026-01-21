@@ -253,7 +253,7 @@
   - Usage tracking
   - Spec: `specs/backend/11-ai-endpoints.md`
 
-- [ ] **TASK-036**: Write AI service tests
+- [DONE] **TASK-036**: Write AI service tests
   - Mock Anthropic API responses
   - Test error handling
   - Test caching logic
