@@ -424,3 +424,13 @@ C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Moq.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

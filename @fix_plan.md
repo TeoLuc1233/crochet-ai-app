@@ -77,7 +77,7 @@
   - Password requirements
   - Spec: `specs/security/01-authentication.md`
 
-- [ ] **TASK-011**: Implement JWT authentication
+- [DONE] **TASK-011**: Implement JWT authentication
   - Token generation service
   - Refresh token mechanism
   - Token validation middleware
