@@ -382,7 +382,7 @@
   - Sidebar (for filters)
   - Spec: `specs/frontend/16-layouts.md`
 
-- [ ] **TASK-053**: Add loading states
+- [DONE] **TASK-053**: Add loading states
   - Skeleton loaders
   - Spinner for async operations
   - Progress bars for uploads
