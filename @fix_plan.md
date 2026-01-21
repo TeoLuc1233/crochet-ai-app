@@ -153,7 +153,7 @@
   - X-Frame-Options
   - Spec: `specs/security/06-security-headers.md`
 
-- [ ] **TASK-022**: Implement CSRF protection
+- [DONE] **TASK-022**: Implement CSRF protection
   - Anti-forgery tokens
   - Validation in API
   - Spec: `specs/security/07-csrf-protection.md`
