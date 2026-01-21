@@ -90,7 +90,7 @@
   - POST /api/auth/logout
   - Spec: `specs/backend/06-auth-endpoints.md`
 
-- [ ] **TASK-013**: Write auth integration tests
+- [DONE] **TASK-013**: Write auth integration tests
   - Test registration flow
   - Test login flow
   - Test invalid credentials
