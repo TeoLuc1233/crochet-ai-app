@@ -422,3 +422,5 @@ C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Npgsql.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\System.Security.Permissions.dll

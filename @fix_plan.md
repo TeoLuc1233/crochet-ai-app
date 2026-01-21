@@ -72,7 +72,7 @@
 
 ### 3.1 Backend Authentication
 
-- [ ] **TASK-010**: Setup ASP.NET Identity
+- [DONE] **TASK-010**: Setup ASP.NET Identity
   - Configure Identity with custom User model
   - Password requirements
   - Spec: `specs/security/01-authentication.md`
