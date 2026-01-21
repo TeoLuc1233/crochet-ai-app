@@ -498,7 +498,7 @@
 
 ### 12.2 User Documentation
 
-- [ ] **TASK-068**: Create README.md
+- [DONE] **TASK-068**: Create README.md
   - Project overview
   - Setup instructions
   - Contribution guidelines
