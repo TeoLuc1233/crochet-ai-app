@@ -312,7 +312,7 @@
 
 ### 7.2 Subscription Frontend
 
-- [ ] **TASK-044**: Create pricing page
+- [DONE] **TASK-044**: Create pricing page
   - /pricing route
   - Pricing cards (Free, Premium, Pro)
   - CTA buttons
