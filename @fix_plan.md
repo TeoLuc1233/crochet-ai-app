@@ -478,7 +478,7 @@
   - Return status JSON
   - Spec: `specs/backend/21-health-checks.md`
 
-- [ ] **TASK-066**: Setup Application Insights
+- [DONE] **TASK-066**: Setup Application Insights
   - Azure Application Insights integration
   - Track API performance
   - Track exceptions
