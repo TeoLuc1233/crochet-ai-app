@@ -414,7 +414,7 @@
 
 ### 10.1 Backend Testing
 
-- [ ] **TASK-057**: Increase unit test coverage
+- [DONE] **TASK-057**: Increase unit test coverage
   - Target: 80%+ coverage
   - Test all services
   - Test all repositories
