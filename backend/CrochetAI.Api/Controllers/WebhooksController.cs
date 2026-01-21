@@ -109,9 +109,7 @@ public class WebhooksController : ControllerBase
         if (dbSubscription != null)
         {
             dbSubscription.Status = subscription.Status;
-            dbSubscription.CurrentPeriodEnd = subscription.CurrentPeriodEnd != null 
-                ? DateTimeOffset.FromUnixTimeSeconds((long)subscription.CurrentPeriodEnd).DateTime 
-                : dbSubscription.CurrentPeriodEnd;
+            dbSubscription.CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(subscription.CurrentPeriodEnd).DateTime;
             dbSubscription.Tier = DetermineTierFromPlanId(subscription.Items.Data[0].Price.Id);
 
             var user = await _context.Users.FindAsync(dbSubscription.UserId);
