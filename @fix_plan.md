@@ -230,7 +230,7 @@
 
 ### 6.2 AI Integration
 
-- [ ] **TASK-032**: Create AI service interface
+- [DONE] **TASK-032**: Create AI service interface
   - IClaudeVisionService
   - IPatternGeneratorService
   - Spec: `specs/ai/01-service-interfaces.md`
