@@ -49,7 +49,7 @@
   - Verify migration SQL
   - Spec: `specs/backend/03-migrations.md`
 
-- [ ] **TASK-007**: Setup database seeding
+- [DONE] **TASK-007**: Setup database seeding
   - Test users
   - Sample patterns
   - Seed script in Program.cs
