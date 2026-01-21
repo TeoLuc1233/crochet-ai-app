@@ -175,7 +175,7 @@
   - Sort by popularity, date, difficulty
   - Spec: `specs/backend/08-pattern-filtering.md`
 
-- [ ] **TASK-025**: Write pattern endpoint tests
+- [DONE] **TASK-025**: Write pattern endpoint tests
   - Test pagination
   - Test filtering
   - Test permissions (free vs premium)
