@@ -41,7 +41,7 @@ public class WebhooksController : ControllerBase
             {
                 case "checkout.session.completed":
                     var session = stripeEvent.Data.Object as Stripe.Checkout.Session;
-                    if (session?.Mode == "subscription" && session.ClientReferenceId != null)
+                    if (session != null && session.Mode == "subscription" && session.ClientReferenceId != null)
                     {
                         await HandleSubscriptionCreated(session);
                     }
@@ -73,7 +73,7 @@ public class WebhooksController : ControllerBase
         }
     }
 
-    private async Task HandleSubscriptionCreated(Session session)
+    private async Task HandleSubscriptionCreated(Stripe.Checkout.Session session)
     {
         var userId = session.ClientReferenceId;
         var subscriptionService = new Stripe.SubscriptionService();
