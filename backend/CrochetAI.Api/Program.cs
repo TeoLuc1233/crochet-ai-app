@@ -13,6 +13,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
+using Serilog;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()
@@ -22,7 +25,6 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/crochet-ai-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
-var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 // Add Application Insights
