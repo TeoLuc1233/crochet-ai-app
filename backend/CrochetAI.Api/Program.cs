@@ -4,6 +4,7 @@ using CrochetAI.Api.Extensions;
 using CrochetAI.Api.Models;
 using CrochetAI.Api.Repositories;
 using CrochetAI.Api.Services;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -92,6 +93,7 @@ builder.Services.AddScoped<IAuditLogRepository, AuditLogRepository>();
 
 // Register services
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Add health checks
 builder.Services.AddHealthChecks();

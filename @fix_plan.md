@@ -83,7 +83,7 @@
   - Token validation middleware
   - Spec: `specs/security/02-jwt-tokens.md`
 
-- [ ] **TASK-012**: Create auth endpoints
+- [DONE] **TASK-012**: Create auth endpoints
   - POST /api/auth/register
   - POST /api/auth/login
   - POST /api/auth/refresh-token

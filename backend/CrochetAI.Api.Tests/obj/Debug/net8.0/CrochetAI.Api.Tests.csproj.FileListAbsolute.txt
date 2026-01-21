@@ -434,3 +434,6 @@ C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\Moq.dll
 C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\matte\OneDrive\Desktop\crochet-ai-ralph-package\crochet-ai-app\backend\CrochetAI.Api.Tests\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

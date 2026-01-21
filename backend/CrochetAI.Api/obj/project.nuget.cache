@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KAycbSfhU9A=",
+  "dgSpecHash": "g6cCbd2KCF8=",
   "success": true,
   "projectFilePath": "C:\\Users\\matte\\OneDrive\\Desktop\\crochet-ai-ralph-package\\crochet-ai-app\\backend\\CrochetAI.Api\\CrochetAI.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matte\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\matte\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\matte\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\matte\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
