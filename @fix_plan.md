@@ -60,7 +60,7 @@
   - Generic repository pattern
   - Spec: `specs/backend/05-repositories.md`
 
-- [ ] **TASK-009**: Implement repositories
+- [DONE] **TASK-009**: Implement repositories
   - UserRepository, PatternRepository, etc.
   - EF Core queries with proper includes
   - Unit tests for each repository
