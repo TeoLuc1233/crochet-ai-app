@@ -99,7 +99,7 @@
 
 ### 3.2 Frontend Authentication
 
-- [ ] **TASK-014**: Create auth context
+- [DONE] **TASK-014**: Create auth context
   - React context for auth state
   - Token storage (httpOnly cookies)
   - Auto-refresh mechanism
