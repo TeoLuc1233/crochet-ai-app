@@ -434,12 +434,12 @@
 
 ### 10.2 Frontend Testing
 
-- [ ] **TASK-060**: Write component tests
+- [DONE] **TASK-060**: Write component tests
   - Test all UI components
   - Test user interactions
   - Spec: `specs/frontend/20-component-tests.md`
 
-- [ ] **TASK-061**: Write E2E tests (Playwright)
+- [DONE] **TASK-061**: Write E2E tests (Playwright)
   - Test auth flow
   - Test pattern browsing
   - Test AI generation
