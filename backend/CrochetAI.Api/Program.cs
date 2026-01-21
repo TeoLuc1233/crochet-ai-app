@@ -1,4 +1,6 @@
+using CrochetAI.Api.Data;
 using CrochetAI.Api.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,10 @@ builder.Services.AddCors(options =>
               .AllowCredentials();
     });
 });
+
+// Add Entity Framework
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add health checks
 builder.Services.AddHealthChecks();

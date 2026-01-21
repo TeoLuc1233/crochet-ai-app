@@ -39,7 +39,7 @@
 
 ### 2.1 Database Design
 
-- [ ] **TASK-005**: Create Entity Framework models
+- [DONE] **TASK-005**: Create Entity Framework models
   - User, Pattern, Project, Subscription, AIGeneration
   - Proper relationships and indexes
   - Spec: `specs/backend/02-database-models.md`
